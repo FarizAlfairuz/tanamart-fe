@@ -47,6 +47,7 @@ function EditToko(props) {
 
   let history = useHistory();
   const submitToko = (e) => {
+    e.preventDefault();
     const idUser = props.idUser;
     const data = new FormData();
     data.append("id_user", idUser);
@@ -59,14 +60,12 @@ function EditToko(props) {
     axios
       .post(`${process.env.REACT_APP_BACKEND_URL}/addToko`, data)
       .then((response) => {
-        console.log("upload berhasil");
         swal("upload berhasil");
         window.location.href = "/toko";
       })
       .catch((err) => {
         alert("upload gagal");
-        console.log(err);
-        console.log(idUser);
+        window.location.href = "/editToko";
       });
   };
 

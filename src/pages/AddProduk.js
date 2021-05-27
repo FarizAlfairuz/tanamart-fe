@@ -44,8 +44,8 @@ function AddProduk(props) {
   }, [props.idUser]);
   const [products, dispatch] = useReducer(reducer, initialState);
   const onSubmitHandeler = (e) => {
-    console.log(props.idToko);
     e.preventDefault();
+    console.log(props.idToko);
     const data = new FormData();
     data.append("id_toko", idToko);
     data.append("nama_barang", products.nama_barang);

@@ -38,6 +38,8 @@ function Editprofile(props) {
     }
   };
   const submitProfile = (e) => {
+    e.preventDefault();
+
     const idUser = props.idUser;
     const data = new FormData();
     data.append("id_user", idUser);
@@ -48,14 +50,12 @@ function Editprofile(props) {
     axios
       .post(`${process.env.REACT_APP_BACKEND_URL}/addBiodata`, data)
       .then((response) => {
-        console.log(response);
         window.location.href = "/profile";
         swal("upload berhasil");
       })
       .catch((err) => {
+        window.location.href = "/editprofile";
         swal("upload gagal");
-        console.log(err);
-        console.log(idUser);
       });
   };
 
