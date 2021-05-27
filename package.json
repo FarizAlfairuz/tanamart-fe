@@ -26,7 +26,10 @@
     "slick-carousel": "^1.8.1",
     "sweetalert": "^2.1.2",
     "video-react": "^0.14.1",
-    "web-vitals": "^1.1.1"
+    "web-vitals": "^1.1.1",
+    "@iconify/icons-ant-design": "^1.1.0",
+    "@iconify/react": "^1.1.4",
+    "jquery": "^3.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
