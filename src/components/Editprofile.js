@@ -154,6 +154,7 @@ function Editprofile(props) {
                 </div>
                 <div className=" align-self-end button-edit mt-2">
                   <button
+                    disabled={disable}
                     onClick={submitProfile}
                     className="btn btn-sm btn-edit-profile"
                   >
