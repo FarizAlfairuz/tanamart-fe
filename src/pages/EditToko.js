@@ -61,14 +61,13 @@ function EditToko(props) {
       .then((response) => {
         console.log("upload berhasil");
         swal("upload berhasil");
-        window.location.reload();
+        window.location.href = "/toko";
       })
       .catch((err) => {
         alert("upload gagal");
         console.log(err);
         console.log(idUser);
       });
-    history.push("/toko");
   };
 
   return (

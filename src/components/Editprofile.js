@@ -49,8 +49,8 @@ function Editprofile(props) {
       .post(`${process.env.REACT_APP_BACKEND_URL}/addBiodata`, data)
       .then((response) => {
         console.log(response);
+        window.location.href = "/profile";
         swal("upload berhasil");
-        window.location.reload();
       })
       .catch((err) => {
         swal("upload gagal");
@@ -148,14 +148,12 @@ function Editprofile(props) {
                   />
                 </div>
                 <div className=" align-self-end button-edit mt-2">
-                  <Link to="profile">
-                    <button
-                      onClick={submitProfile}
-                      className="btn btn-sm btn-edit-profile"
-                    >
-                      Simpan
-                    </button>
-                  </Link>
+                  <button
+                    onClick={submitProfile}
+                    className="btn btn-sm btn-edit-profile"
+                  >
+                    Simpan
+                  </button>
                 </div>
               </form>
             </div>

@@ -66,7 +66,6 @@ function AddProduk(props) {
         swal("upload gagal");
         console.log(err);
       });
-    history.push("/toko");
   };
 
   return (

@@ -55,7 +55,6 @@ function EditProduk(props) {
         alert("edit gagal");
         console.log(err);
       });
-    history.push("/toko");
   };
 
   return (
