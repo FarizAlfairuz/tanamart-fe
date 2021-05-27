@@ -31,9 +31,11 @@ function EditProduk(props) {
   let history = useHistory();
   const { id_barang } = props.match.params;
   const [products, dispatch] = useReducer(reducer, initialState);
+  const [disable, setDisable] = useState(false);
 
   const onSubmitHandeler = (e) => {
     e.preventDefault();
+    setDisable(true);
     const data = new FormData();
     data.append("id_barang", id_barang);
     data.append("nama_barang", products.nama_barang);
@@ -48,6 +50,7 @@ function EditProduk(props) {
       })
       .then((response) => {
         alert("Edit berhasil");
+        setDisable(false);
         window.location.href = "/toko";
         console.log(response);
       })
@@ -80,6 +83,7 @@ function EditProduk(props) {
                     <strong>Nama Produk</strong>
                   </label>
                   <input
+                    disabled={disable}
                     name="namabarang"
                     onChange={(e) =>
                       dispatch({ type: "namabarang", payload: e.target.value })
@@ -94,6 +98,7 @@ function EditProduk(props) {
                     <strong>Deskripsi Produk</strong>
                   </label>
                   <textarea
+                    disabled={disable}
                     name="deskripsi"
                     onChange={(e) =>
                       dispatch({ type: "deskripsi", payload: e.target.value })
@@ -108,6 +113,7 @@ function EditProduk(props) {
                     <strong>Harga Barang</strong>
                   </label>
                   <input
+                    disabled={disable}
                     name="hargabarang"
                     onChange={(e) =>
                       dispatch({ type: "hargabarang", payload: e.target.value })
@@ -122,6 +128,7 @@ function EditProduk(props) {
                     <strong>QTY</strong>
                   </label>
                   <input
+                    disabled={disable}
                     name="qty"
                     onChange={(e) =>
                       dispatch({ type: "qty", payload: e.target.value })
@@ -136,6 +143,7 @@ function EditProduk(props) {
                     <strong>Foto</strong>
                   </label>
                   <input
+                    disabled={disable}
                     name="fotobarang"
                     accept="image/*"
                     onChange={(e) =>
@@ -149,6 +157,7 @@ function EditProduk(props) {
                   />
                 </div>
                 <button
+                  disabled={disable}
                   style={{ backgroundColor: "#184D47", color: "white" }}
                   onClick={onSubmitHandeler}
                   type="submit"

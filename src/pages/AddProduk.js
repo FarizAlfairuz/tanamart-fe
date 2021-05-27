@@ -31,6 +31,7 @@ const reducer = (currentState, action) => {
 function AddProduk(props) {
   let history = useHistory();
   const [idToko, setIdToko] = useState(null);
+  const [disable, setDisable] = useState(false);
 
   useEffect(() => {
     axios
@@ -45,6 +46,7 @@ function AddProduk(props) {
   const [products, dispatch] = useReducer(reducer, initialState);
   const onSubmitHandeler = (e) => {
     e.preventDefault();
+    setDisable(true);
     console.log(props.idToko);
     const data = new FormData();
     data.append("id_toko", idToko);
@@ -58,9 +60,10 @@ function AddProduk(props) {
     axios
       .post(`${process.env.REACT_APP_BACKEND_URL}/addProduct`, data)
       .then((response) => {
-        swal("upload berhasil");
+        setDisable(false);
         console.log(response);
         window.location.href = "/toko";
+        swal("upload berhasil");
       })
       .catch((err) => {
         swal("upload gagal");
@@ -91,6 +94,7 @@ function AddProduk(props) {
                     <strong>Nama Produk</strong>
                   </label>
                   <input
+                    disabled={disable}
                     name="namabarang"
                     onChange={(e) =>
                       dispatch({ type: "namabarang", payload: e.target.value })
@@ -105,6 +109,7 @@ function AddProduk(props) {
                     <strong>Deskripsi Produk</strong>
                   </label>
                   <textarea
+                    disabled={disable}
                     name="deskripsi"
                     onChange={(e) =>
                       dispatch({ type: "deskripsi", payload: e.target.value })
@@ -119,6 +124,7 @@ function AddProduk(props) {
                     <strong>Harga Barang</strong>
                   </label>
                   <input
+                    disabled={disable}
                     name="hargabarang"
                     onChange={(e) =>
                       dispatch({ type: "hargabarang", payload: e.target.value })
@@ -133,6 +139,7 @@ function AddProduk(props) {
                     <strong>QTY</strong>
                   </label>
                   <input
+                    disabled={disable}
                     name="qty"
                     onChange={(e) =>
                       dispatch({ type: "qty", payload: e.target.value })
@@ -147,6 +154,7 @@ function AddProduk(props) {
                     <strong>Foto</strong>
                   </label>
                   <input
+                    disabled={disable}
                     name="fotobarang"
                     accept="image/*"
                     onChange={(e) =>
@@ -160,6 +168,7 @@ function AddProduk(props) {
                   />
                 </div>
                 <button
+                  disabled={disable}
                   style={{ backgroundColor: "#184D47", color: "white" }}
                   onClick={onSubmitHandeler}
                   type="submit"

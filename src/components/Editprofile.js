@@ -56,8 +56,8 @@ function Editprofile(props) {
         swal("upload berhasil");
       })
       .catch((err) => {
-        window.location.href = "/editprofile";
         swal("upload gagal");
+        window.location.href = "/editprofile";
       });
   };
 
@@ -91,6 +91,7 @@ function Editprofile(props) {
                   <div className="btn btn-sm btn-edit-profile"> Upload</div>
                 </label>
                 <input
+                  disabled={disable}
                   type="file"
                   id="upload-button"
                   hidden

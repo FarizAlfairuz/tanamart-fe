@@ -34,6 +34,7 @@ const reducer = (currentState, action) => {
 function EditToko(props) {
   const [image, setImage] = useState({ preview: "", raw: "" });
   const [toko, dispatch] = useReducer(reducer, initialState);
+  const [disable, setDisable] = useState(false);
 
   const handleChange = (e) => {
     dispatch({ type: "profile_pict", payload: e.target.files[0] });
@@ -48,6 +49,7 @@ function EditToko(props) {
   let history = useHistory();
   const submitToko = (e) => {
     e.preventDefault();
+    setDisable(true);
     const idUser = props.idUser;
     const data = new FormData();
     data.append("id_user", idUser);
@@ -60,8 +62,9 @@ function EditToko(props) {
     axios
       .post(`${process.env.REACT_APP_BACKEND_URL}/addToko`, data)
       .then((response) => {
-        swal("upload berhasil");
+        setDisable(false);
         window.location.href = "/toko";
+        swal("upload berhasil");
       })
       .catch((err) => {
         alert("upload gagal");
@@ -94,6 +97,7 @@ function EditToko(props) {
                   <div className="btn btn-sm btn-edit-profile"> Upload</div>
                 </label>
                 <input
+                  disabled={disable}
                   type="file"
                   id="upload-button"
                   hidden
@@ -108,6 +112,7 @@ function EditToko(props) {
                     <strong>Nama Toko</strong>
                   </label>
                   <input
+                    disabled={disable}
                     onChange={(e) =>
                       dispatch({ type: "nama", payload: e.target.value })
                     }
@@ -123,6 +128,7 @@ function EditToko(props) {
                     <strong>Alamat Toko</strong>
                   </label>
                   <input
+                    disabled={disable}
                     onChange={(e) =>
                       dispatch({ type: "alamat", payload: e.target.value })
                     }
@@ -138,6 +144,7 @@ function EditToko(props) {
                     <strong>Nomor Rekening</strong>
                   </label>
                   <input
+                    disabled={disable}
                     onChange={(e) =>
                       dispatch({ type: "rekening", payload: e.target.value })
                     }
@@ -153,6 +160,7 @@ function EditToko(props) {
                     <strong>Kontak Toko</strong>
                   </label>
                   <input
+                    disabled={disable}
                     onChange={(e) =>
                       dispatch({ type: "no_hp", payload: e.target.value })
                     }
@@ -168,6 +176,7 @@ function EditToko(props) {
                     <strong>Deskripsi</strong>
                   </label>
                   <textarea
+                    disabled={disable}
                     onChange={(e) =>
                       dispatch({ type: "deskripsi", payload: e.target.value })
                     }
@@ -180,6 +189,7 @@ function EditToko(props) {
                 </div>
                 <div className=" align-self-end button-edit mt-2">
                   <button
+                    disabled={disable}
                     onClick={submitToko}
                     className="btn btn-sm btn-edit-profile"
                     type="button"
