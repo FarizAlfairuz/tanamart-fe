@@ -27,6 +27,7 @@ const reducer = (currentState, action) => {
 function Editprofile(props) {
   const [image, setImage] = useState({ preview: "", raw: "" });
   const [biodata, dispatch] = useReducer(reducer, initialState);
+  const [disable, setDisable] = useState(false);
 
   const handleChange = (e) => {
     dispatch({ type: "profile_pict", payload: e.target.files[0] });
@@ -39,7 +40,7 @@ function Editprofile(props) {
   };
   const submitProfile = (e) => {
     e.preventDefault();
-
+    setDisable(true);
     const idUser = props.idUser;
     const data = new FormData();
     data.append("id_user", idUser);
@@ -51,6 +52,7 @@ function Editprofile(props) {
       .post(`${process.env.REACT_APP_BACKEND_URL}/addBiodata`, data)
       .then((response) => {
         window.location.href = "/profile";
+        setDisable(false);
         swal("upload berhasil");
       })
       .catch((err) => {
@@ -149,6 +151,7 @@ function Editprofile(props) {
                 </div>
                 <div className=" align-self-end button-edit mt-2">
                   <button
+                    disabled={disable}
                     onClick={submitProfile}
                     className="btn btn-sm btn-edit-profile"
                   >
