@@ -109,6 +109,7 @@ function Editprofile(props) {
                     <strong>Nama</strong>
                   </label>
                   <input
+                    disabled={disable}
                     onChange={(e) =>
                       dispatch({ type: "nama", payload: e.target.value })
                     }
@@ -124,6 +125,7 @@ function Editprofile(props) {
                     <strong>Alamat</strong>
                   </label>
                   <input
+                    disabled={disable}
                     onChange={(e) =>
                       dispatch({ type: "alamat", payload: e.target.value })
                     }
@@ -139,6 +141,7 @@ function Editprofile(props) {
                     <strong>No HP</strong>
                   </label>
                   <input
+                    disabled={disable}
                     onChange={(e) =>
                       dispatch({ type: "no_hp", payload: e.target.value })
                     }
