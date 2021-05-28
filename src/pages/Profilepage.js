@@ -82,8 +82,7 @@ function Profilepage(props) {
             <div className="col-sm-6 col-lg-2">
               <div className="thumb-img ">
                 <img
-                  src="https://image000.flaticon.com/png/512/2948/2948035.png
-"
+                  src="https://image000.flaticon.com/png/512/2948/2948035.png"
                   alt="profile"
                 />
               </div>
