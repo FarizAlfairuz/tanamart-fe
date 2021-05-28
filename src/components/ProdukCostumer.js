@@ -73,7 +73,7 @@ function ProdukCostumer(props) {
                       <div
                         style={{
                           height: "250px",
-                          backgroundImage: `url(${`${process.env.REACT_APP_BACKEND_URL}/uploads/${productUser.foto}`})`,
+                          backgroundImage: `url(${`${productUser.foto}`})`,
                           backgroundSize: "cover",
                         }}
                         className="product-costumer-handler"

@@ -86,7 +86,7 @@ function ProductCard(props) {
                       <div
                         className="thumb-img-product d-flex justify-content-center align-items-center"
                         style={{
-                          backgroundImage: ` url("${process.env.REACT_APP_BACKEND_URL}/uploads/${product.foto}")`,
+                          backgroundImage: ` url("${product.foto}")`,
                           height: "250px",
                           backgroundSize: "100% 100%",
                           backgroundRepeat: "no-repeat",
@@ -97,7 +97,7 @@ function ProductCard(props) {
                         </div>
                         {/* <img
                           className="card-img-top"
-                          src={`${process.env.REACT_APP_BACKEND_URL}/uploads/${product.foto}`}
+                          src={`${product.foto}`}
                           alt="Card"
                           height="250px"
                         /> */}

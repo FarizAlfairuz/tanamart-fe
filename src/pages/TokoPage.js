@@ -50,7 +50,7 @@ function TokoPage(props) {
                 <div className="d-flex flex-wrap">
                   <div className="thumb-img ">
                     <img
-                      src={`${process.env.REACT_APP_BACKEND_URL}/uploads/${tokoUser.foto_toko}`}
+                      src={`${tokoUser.foto_toko}`}
                       alt="profile"
                       width="100%"
                     />

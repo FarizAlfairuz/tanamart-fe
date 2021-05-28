@@ -10,7 +10,7 @@ function ListArtikel(props) {
         <div className="col-12">
           <div className="list-artikel px-3 mt-2 w-100 d-flex">
             <div className="thumb-image w-40">
-              <img className="img-fluid" width="150px" alt="petani" src={`${process.env.REACT_APP_BACKEND_URL}/uploads/${props.gambar}`} />
+              <img className="img-fluid" width="150px" alt="petani" src={`${props.gambar}`} />
             </div>
             <div className="artikel-title ml-2 w-50">
               <strong>

@@ -38,7 +38,7 @@ function Profilepage(props) {
             <div className="col-sm-6 col-lg-2">
               <div className="thumb-img ">
                 <img
-                  src={`${process.env.REACT_APP_BACKEND_URL}/uploads/${bioUser.profile_pict}`}
+                  src={`${bioUser.profile_pict}`}
                   alt="profile"
                   width="100%"
                 />

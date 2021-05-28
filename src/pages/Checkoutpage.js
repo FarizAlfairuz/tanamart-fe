@@ -89,7 +89,7 @@ function Checkoutpage() {
                 <div className="d-flex justify-content-center align-items-center">
                   <div className="col-5">
                     <img
-                      src={`${process.env.REACT_APP_BACKEND_URL}/uploads/${list.product.foto}`}
+                      src={`${list.product.foto}`}
                       alt="product"
                       className="pb-2"
                       height="300px"

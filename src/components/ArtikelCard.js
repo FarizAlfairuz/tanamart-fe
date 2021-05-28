@@ -75,7 +75,7 @@ function ArtikelCard() {
               <Link className="link" to={`/detailArtikel/${a.id_artikel}`} >
                 <div className="d-flex justify-content-center mt-3" >
                   <div className="card mx-1" style={{ width: "18rem", minHeight: "300px" }}>
-                    <img className="card-img-top" src={`${process.env.REACT_APP_BACKEND_URL}/uploads/${a.foto_artikel}`} alt="Card" />
+                    <img className="card-img-top" src={`${a.foto_artikel}`} alt="Card" />
                     <div className="card-body">
                       <h5 className="card-title font-weight-bold">
                         {a.judul_artikel}
