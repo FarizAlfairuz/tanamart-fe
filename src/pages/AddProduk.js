@@ -63,10 +63,10 @@ function AddProduk(props) {
         setDisable(false);
         console.log(response);
         window.location.href = "/toko";
-        swal("upload berhasil");
+        swal("Upload berhasil");
       })
       .catch((err) => {
-        swal("upload gagal, jangan ada data yang kosong");
+        swal("Upload gagal, jangan ada data yang kosong");
         window.location.href = "/addProduk";
         console.log(err);
       });

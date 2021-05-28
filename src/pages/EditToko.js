@@ -64,10 +64,10 @@ function EditToko(props) {
       .then((response) => {
         setDisable(false);
         window.location.href = "/toko";
-        swal("upload berhasil");
+        swal("Upload berhasil");
       })
       .catch((err) => {
-        alert("upload gagal, jangan ada data yang kosong");
+        alert("Upload gagal, jangan ada data yang kosong");
         window.location.href = "/editToko";
       });
   };
@@ -79,7 +79,7 @@ function EditToko(props) {
           <div className="col-12 ">
             <div className="content-1-profile w-100 d-flex flex-column mt-3">
               {image.preview ? (
-                <div className="thumb-img ">
+                <div className="thumb-img m-auto">
                   <img
                     src={image.preview}
                     alt="dummy"
