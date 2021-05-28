@@ -1,6 +1,6 @@
 import React from 'react'
 import '../assets/css/addThread.css'
-import { useReducer } from "react"
+import { useReducer, useState } from "react"
 import { useHistory } from "react-router-dom"
 import axios from 'axios'
 import swal from "sweetalert"
