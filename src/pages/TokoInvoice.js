@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import ProductCard from "../components/ProductCard";
 import swal from "sweetalert";
+import "../assets/css/invoicePenjual.css";
 
 function TokoInvoice(props) {
   const [invoiceToko, setInvoiceToko] = useState([]);
@@ -54,12 +55,14 @@ function TokoInvoice(props) {
     });
   };
   return (
-    <div>
+    <section id="invoice-penjual">
       <div
-        className="container-fluid p-0 py-5 px-5"
+        className="container-fluid p-0 py-5 px-lg-5 px-0"
         style={{ marginBottom: "5%" }}
       >
-        <h1>Tabel Invoice Penjualan</h1>
+        <div className="ml-0">
+          <h1>Tabel Invoice Penjual</h1>
+        </div>
         <div className="table-invoice" style={{ overflow: "scroll" }}>
           <table className="table table-striped">
             <thead>
@@ -115,7 +118,7 @@ function TokoInvoice(props) {
       </div>
       <h1 className="ml-lg-5 ml-0">Produk Pilihan</h1>
       <ProductCard />
-    </div>
+    </section>
   );
 }
 

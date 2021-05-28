@@ -3,6 +3,7 @@ import axios from "axios";
 import { Tooltip } from "reactstrap";
 import ProductCard from "../components/ProductCard";
 import swal from "sweetalert";
+import "../assets/css/invoicePembeli.css";
 
 function PembeliInvoice(props) {
   const [invoicePembeli, setInvoicePembeli] = useState([]);
@@ -13,7 +14,7 @@ function PembeliInvoice(props) {
   useEffect(() => {
     console.log(invoicePembeli.id_toko);
     axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/showOrderUser/${props.idUser}`)
+      .get(`http://localhost:5000/showOrderUser/${props.idUser}`)
       .then((response) => {
         console.log(response.data);
         setInvoicePembeli(response.data);
@@ -36,7 +37,7 @@ function PembeliInvoice(props) {
           id_order: id,
         };
         axios
-          .post(`${process.env.REACT_APP_BACKEND_URL}/productArrived`, payload)
+          .post(`http://localhost:5000/productArrived`, payload)
           .then((response) => {
             console.log(response);
             window.location.reload();
@@ -90,45 +91,49 @@ function PembeliInvoice(props) {
     }
   };
   return (
-    <div className="mb-5">
-      <div
-        className="container-fluid p-0 py-5 px-5 "
-        style={{ marginBottom: "5%" }}
-      >
-        <h1>Tabel Invoice Pembeli</h1>
+    <section id="invoice-pembeli">
+      <div className="mb-5">
+        <div
+          className="container-fluid p-0 py-5 px-lg-5 px-0 "
+          style={{ marginBottom: "5%" }}
+        >
+          <div className="ml-0">
+            <h1>Tabel Invoice Pembeli</h1>
+          </div>
 
-        <div className="table-invoice" style={{ overflow: "scroll" }}>
-          <table className="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">Nama Barang</th>
-                <th scope="col">Qty</th>
-                <th scope="col">Total Harga</th>
-                <th scope="col">Nama Toko</th>
-                <th scope="col">Kontak Toko</th>
-                <th scope="col">Status Pesanan</th>
-                <th scope="col">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {invoicePembeli.map((order) => (
-                <tr key={order.id_order}>
-                  <td>{order.nama_barang}</td>
-                  <td>{order.qty}</td>
-                  <td>{order.total_price}</td>
-                  <td>{order.nama_toko}</td>
-                  <td>{order.kontak_toko}</td>
-                  <td>{getStatus(order.status)}</td>
-                  <td>{getComfirmation(order.status, order.id_order)}</td>
+          <div className="table-invoice" style={{ overflow: "scroll" }}>
+            <table className="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Nama Barang</th>
+                  <th scope="col">Qty</th>
+                  <th scope="col">Total Harga</th>
+                  <th scope="col">Nama Toko</th>
+                  <th scope="col">Kontak Toko</th>
+                  <th scope="col">Status Pesanan</th>
+                  <th scope="col">Action</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {invoicePembeli.map((order) => (
+                  <tr key={order.id_order}>
+                    <td>{order.nama_barang}</td>
+                    <td>{order.qty}</td>
+                    <td>{order.total_price}</td>
+                    <td>{order.nama_toko}</td>
+                    <td>{order.kontak_toko}</td>
+                    <td>{getStatus(order.status)}</td>
+                    <td>{getComfirmation(order.status, order.id_order)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
+        <h1 className="ml-lg-5 ml-0">Produk Pilihan</h1>
+        <ProductCard />
       </div>
-      <h1 className="ml-lg-5 ml-0">Produk Pilihan</h1>
-      <ProductCard />
-    </div>
+    </section>
   );
 }
 

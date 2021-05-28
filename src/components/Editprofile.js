@@ -62,7 +62,7 @@ function Editprofile(props) {
   };
 
   return (
-    <section id="edit-profile">
+    <section id="edit-profile" style={{ height: "900px" }}>
       <div className="container-fluid py-5">
         <div className="row">
           <div className="col-12">
