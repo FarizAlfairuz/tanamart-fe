@@ -49,7 +49,7 @@ function DashboardAdmin() {
                                     )}
                                 </div>
                                 <div className="col-2">
-                                    Rp {order.total_price}
+                                    Rp {order.total_price.toLocaleString()}
                                 </div>
                             </div>
                         ))}

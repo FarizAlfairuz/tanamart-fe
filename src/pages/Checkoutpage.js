@@ -97,14 +97,14 @@ function Checkoutpage() {
                     />
                     <h6>{list.product.nama_barang}</h6>
                   </div>
-                  <div className="col-2">{list.product.harga_barang}</div>
+                  <div className="col-2">Rp {list.product.harga_barang.toLocaleString()}</div>
                   <div className="col-3">
                     <div className="d-flex justify-content-center">
                       <strong>{list.qty}</strong>
                     </div>
                   </div>
                   <div className="col-2">
-                    <strong>Rp. {list.total_price}</strong>
+                    <strong>Rp. {list.total_price.toLocaleString()}</strong>
                     <button
                       className="btn btn-sm btn-warning mt-2"
                       style={{ color: "white" }}

@@ -119,7 +119,7 @@ function PembeliInvoice(props) {
                   <tr key={order.id_order}>
                     <td>{order.nama_barang}</td>
                     <td>{order.qty}</td>
-                    <td>{order.total_price}</td>
+                    <td>Rp {order.total_price.toLocaleString()}</td>
                     <td>{order.nama_toko}</td>
                     <td>{order.kontak_toko}</td>
                     <td>{getStatus(order.status)}</td>

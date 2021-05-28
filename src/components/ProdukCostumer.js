@@ -106,7 +106,7 @@ function ProdukCostumer(props) {
                         <span>{productUser.qty}</span>
                       </p>
                       <p className="price">
-                        <strong>Rp {productUser.harga_barang}</strong>
+                        <strong>Rp {productUser.harga_barang.toLocaleString()}</strong>
                       </p>
                     </div>
                   </div>
