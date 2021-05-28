@@ -14,7 +14,7 @@ function PembeliInvoice(props) {
   useEffect(() => {
     console.log(invoicePembeli.id_toko);
     axios
-      .get(`http://localhost:5000/showOrderUser/${props.idUser}`)
+      .get(`${process.env.REACT_APP_BACKEND_URL}/showOrderUser/${props.idUser}`)
       .then((response) => {
         console.log(response.data);
         setInvoicePembeli(response.data);
@@ -37,7 +37,7 @@ function PembeliInvoice(props) {
           id_order: id,
         };
         axios
-          .post(`http://localhost:5000/productArrived`, payload)
+          .post(`${process.env.REACT_APP_BACKEND_URL}/productArrived`, payload)
           .then((response) => {
             console.log(response);
             window.location.reload();
