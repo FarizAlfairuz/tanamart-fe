@@ -75,10 +75,9 @@ function Editprofile(props) {
               {image.preview ? (
                 <div className="thumb-img m-auto">
                   <img
-                    src={image.preview}
-                    alt="dummy"
-                    width="300"
-                    height="300"
+                    src="https://image000.flaticon.com/png/512/2948/2948035.png
+"
+                    alt="profile"
                   />
                 </div>
               ) : (

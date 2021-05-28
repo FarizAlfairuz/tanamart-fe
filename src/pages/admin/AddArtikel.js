@@ -1,5 +1,5 @@
 import React from 'react'
-import { useReducer } from "react"
+import { useReducer, useState } from "react"
 import { useHistory } from "react-router-dom"
 import axios from 'axios'
 import swal from "sweetalert"
@@ -28,9 +28,11 @@ function AddArtikel(props) {
     const localID = localStorage.getItem("id")
 
     const [artikel, dispatch] = useReducer(reducer, initialState)
+    const [disable, setDisable] = useState(false);
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
+        setDisable(true);
         const data = new FormData();
         data.append("id_user", localID);
         data.append("judul_artikel", artikel.judul);
@@ -40,6 +42,7 @@ function AddArtikel(props) {
         axios
             .post(`${process.env.REACT_APP_BACKEND_URL}/addArtikel`, data)
             .then((response) => {
+                setDisable(false);
                 swal("Artikel berhasil dibuat")
                 console.log(response)
                 console.log("berhasil")
@@ -67,6 +70,7 @@ function AddArtikel(props) {
                             <div className="form-group">
                                 <label htmlFor="judul">Judul</label>
                                 <input
+                                    disabled={disable}
                                     name="judul"
                                     type="text"
                                     value={artikel.judul}
@@ -78,6 +82,7 @@ function AddArtikel(props) {
                             <div className="form-group">
                                 <label htmlFor="isi">Isi</label>
                                 <textarea
+                                    disabled={disable}
                                     name="isi" id="isi" cols="30" rows="10"
                                     value={artikel.isi}
                                     onChange={(e) =>
@@ -88,6 +93,7 @@ function AddArtikel(props) {
                             <div className="form-group">
                                 <label htmlFor="judul">Gambar</label>
                                 <input
+                                    disabled={disable}
                                     name="gambar"
                                     accept="image/*"
                                     onChange={(e) =>
@@ -100,7 +106,7 @@ function AddArtikel(props) {
                                     className="form-control p-1 pl-5"
                                 />
                             </div>
-                            <button onClick={onSubmitHandler} className="btn-buat-thread">Post</button>
+                            <button disabled={disable} onClick={onSubmitHandler} className="btn-buat-thread">Post</button>
                         </div>
                     </div>
                 </div>

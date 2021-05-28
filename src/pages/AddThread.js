@@ -1,6 +1,6 @@
 import React from 'react'
 import '../assets/css/addThread.css'
-import { useReducer } from "react"
+import { useReducer, useState } from "react"
 import { useHistory } from "react-router-dom"
 import axios from 'axios'
 import swal from "sweetalert"
@@ -25,22 +25,25 @@ const reducer = (currentState, action) => {
 }
 function AddThread(props) {
     let history = useHistory();
-    
+
     const [thread, dispatch] = useReducer(reducer, initialState)
-    
+    const [disable, setDisable] = useState(false);
+
     const onSubmitHandler = (e) => {
         e.preventDefault();
+        setDisable(true);
         const data = new FormData();
         data.append("id_user", props.idUser);
         data.append("judul_threads", thread.judul);
         data.append("isi_threads", thread.isi);
         data.append("foto_threads", thread.gambar);
         console.log(props.idUser)
-        
+
 
         axios
             .post(`${process.env.REACT_APP_BACKEND_URL}/addThreads`, data)
             .then((response) => {
+                setDisable(false);
                 swal("Thread berhasil dibuat")
                 console.log(response)
                 history.push("/forum")
@@ -66,6 +69,7 @@ function AddThread(props) {
                         <div className="form-group">
                             <label htmlFor="judul">Judul</label>
                             <input
+                                disabled={disable}
                                 name="judul"
                                 type="text"
                                 value={thread.judul}
@@ -77,6 +81,7 @@ function AddThread(props) {
                         <div className="form-group">
                             <label htmlFor="isi">Isi</label>
                             <textarea
+                                disabled={disable}
                                 name="isi" id="isi" cols="30" rows="10"
                                 value={thread.isi}
                                 onChange={(e) =>
@@ -87,6 +92,7 @@ function AddThread(props) {
                         <div className="form-group">
                             <label htmlFor="judul">Gambar</label>
                             <input
+                                disabled={disable}
                                 name="gambar"
                                 accept="image/*"
                                 onChange={(e) =>
@@ -99,7 +105,7 @@ function AddThread(props) {
                                 className="form-control p-1 pl-5"
                             />
                         </div>
-                        <button onClick={onSubmitHandler} className="btn-buat-thread">Post</button>
+                        <button disabled={disable} onClick={onSubmitHandler} className="btn-buat-thread">Post</button>
                     </div>
                 </div>
             </div>
