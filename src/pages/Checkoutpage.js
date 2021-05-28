@@ -141,7 +141,7 @@ function Checkoutpage() {
           <div className="col-lg-6 col-sm-12">
             <div className="row d-flex justify-content-center">
               <div className="col-lg-5 col-12">
-                Total Harga : <strong>{totaPrice}</strong>
+                Total Harga : <strong>Rp {totaPrice.toLocaleString()}</strong>
               </div>
             </div>
             <br />
