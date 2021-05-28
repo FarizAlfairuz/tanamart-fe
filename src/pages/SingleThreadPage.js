@@ -229,7 +229,7 @@ function SingleThreadPage(props) {
                   ) : null}
                   {single.isi_threads ? (
                     <div>
-                      <p>{single.isi_threads}</p>
+                      <pre>{single.isi_threads}</pre>
                     </div>
                   ) : null}
                 </div>
