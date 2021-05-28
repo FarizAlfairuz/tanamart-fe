@@ -26,14 +26,16 @@ const reducer = (currentState, action) => {
 
 function EditThread(props) {
     // const localID = localStorage.getItem("id")
-    const {id_thread} = props.match.params
+    const { id_thread } = props.match.params
     const id_thread_int = parseInt(id_thread)
+    const [disable, setDisable] = useState(false);
     let history = useHistory();
-    
+
     const [thread, dispatch] = useReducer(reducer, initialState)
-    
+
     const onSubmitHandler = (e) => {
         e.preventDefault();
+        setDisable(true);
         const data = new FormData();
         data.append("id_threads", id_thread_int);
         // data.append("id_user", props.idUser);
@@ -42,11 +44,12 @@ function EditThread(props) {
         data.append("foto_threads", thread.gambar);
         console.log(id_thread_int)
         console.log(data)
-        
+
 
         axios
             .post(`${process.env.REACT_APP_BACKEND_URL}/editThreads`, data)
             .then((response) => {
+                setDisable(false);
                 swal("Thread berhasil diedit")
                 console.log(response)
                 history.push("/forum")
@@ -72,6 +75,7 @@ function EditThread(props) {
                         <div className="form-group">
                             <label htmlFor="judul">Judul</label>
                             <input
+                                disabled={disable}
                                 name="judul"
                                 type="text"
                                 value={thread.judul}
@@ -83,6 +87,7 @@ function EditThread(props) {
                         <div className="form-group">
                             <label htmlFor="isi">Isi</label>
                             <textarea
+                                disabled={disable}
                                 name="isi" id="isi" cols="30" rows="10"
                                 value={thread.isi}
                                 onChange={(e) =>
@@ -93,6 +98,7 @@ function EditThread(props) {
                         <div className="form-group">
                             <label htmlFor="judul">Gambar</label>
                             <input
+                                disabled={disable}
                                 name="gambar"
                                 accept="image/*"
                                 onChange={(e) =>
@@ -105,7 +111,7 @@ function EditThread(props) {
                                 className="form-control p-1 pl-5"
                             />
                         </div>
-                        <button onClick={onSubmitHandler} className="btn-buat-thread">Post</button>
+                        <button disabled={disable} onClick={onSubmitHandler} className="btn-buat-thread">Post</button>
                     </div>
                 </div>
             </div>
