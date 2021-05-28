@@ -11,7 +11,7 @@ function ListProduk() {
       {/* List Kategori */}
       <ListKategori />
       {/* detail product */}
-      <h1 className="ml-lg-5 ml-0 mt-5">Tanaman Hias Pilihan</h1>
+      <h1 className="ml-lg-5 ml-0 mt-5">Tanaman Pilihan Tanamart</h1>
       <ProductCard />
     </div>
   );
