@@ -53,7 +53,7 @@ function Editprofile(props) {
       .then((response) => {
         window.location.href = "/profile";
         setDisable(false);
-        swal("upload berhasil");
+        swal("Upload berhasil");
       })
       .catch((err) => {
         swal("upload gagal, jangan ada data yang kosong");
