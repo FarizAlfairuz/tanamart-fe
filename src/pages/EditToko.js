@@ -67,7 +67,7 @@ function EditToko(props) {
         swal("upload berhasil");
       })
       .catch((err) => {
-        alert("upload gagal");
+        alert("upload gagal, jangan ada data yang kosong");
         window.location.href = "/editToko";
       });
   };

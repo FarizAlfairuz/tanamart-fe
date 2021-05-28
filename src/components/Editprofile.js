@@ -56,7 +56,7 @@ function Editprofile(props) {
         swal("upload berhasil");
       })
       .catch((err) => {
-        swal("upload gagal");
+        swal("upload gagal, jangan ada data yang kosong");
         window.location.href = "/editprofile";
       });
   };

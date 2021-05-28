@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -55,7 +55,8 @@ function EditProduk(props) {
         console.log(response);
       })
       .catch((err) => {
-        alert("edit gagal");
+        alert("edit gagal, jangan ada data yang kosong");
+        window.location.href = "/editProduct/" + id_barang;
         console.log(err);
       });
   };
