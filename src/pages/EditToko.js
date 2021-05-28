@@ -79,13 +79,20 @@ function EditToko(props) {
           <div className="col-12 ">
             <div className="content-1-profile w-100 d-flex flex-column mt-3">
               {image.preview ? (
-                <div className="thumb-img m-auto">
-                  <img
+                <div className="thumb-img "
+                  style={{
+                    backgroundImage:
+                      "url(https://image000.flaticon.com/png/512/126/126122.png)",
+                    backgroundSize: "120px",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                  }}>
+                  {/* <img
                     src={image.preview}
                     alt="dummy"
                     width="300"
                     height="300"
-                  />
+                  /> */}
                 </div>
               ) : (
                 <div className="thumb-img m-auto">

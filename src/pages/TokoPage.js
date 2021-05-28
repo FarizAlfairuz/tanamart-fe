@@ -103,7 +103,7 @@ function TokoPage(props) {
                     <div className="user-profile">
                       <strong>Toko ....</strong> <br />
                       <p>
-                        <strong>Produk...</strong>
+                        <strong>Produk ...</strong>
                       </p>
                     </div>
                     <div className="button-edit">
