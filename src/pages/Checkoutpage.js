@@ -89,7 +89,7 @@ function Checkoutpage() {
                 <div className="d-flex justify-content-center align-items-center">
                   <div className="col-5">
                     <img
-                      src={`${list.product.foto}`}
+                      src={list.product.foto}
                       alt="product"
                       className="pb-2"
                       height="300px"

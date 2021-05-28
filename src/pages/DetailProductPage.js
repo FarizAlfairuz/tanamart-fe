@@ -101,7 +101,7 @@ function DetailProductPage(props) {
                   <div className="thumb-image-produk">
                     <div className="gambar-produk">
                       <img
-                        src={`${detailBarang.foto}`}
+                        src={detailBarang.foto}
                         alt="produk"
                         height="330px"
                         width="100%"
@@ -168,7 +168,7 @@ function DetailProductPage(props) {
                   <div className=" thumb-toko d-flex flex-column align-items-center p-3">
                     <div className="toko-img">
                       <img
-                        src={`${toko.foto_toko}`}
+                        src={toko.foto_toko}
                         alt="toko"
                         width="100%"
                         height="100%"

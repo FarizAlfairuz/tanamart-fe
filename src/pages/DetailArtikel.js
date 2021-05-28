@@ -57,7 +57,7 @@ function DetailArtikel(props) {
               <img
                 className="img-fluid"
                 alt="petani"
-                src={`${single.foto_artikel}`}
+                src={single.foto_artikel}
               />
             </div>
             <div className="text-artikel">
@@ -74,7 +74,7 @@ function DetailArtikel(props) {
                     className="img-fluid"
                     width="150px"
                     alt="petani"
-                    src={`${list.foto_artikel}`}
+                    src={list.foto_artikel}
                   />
                 </div>
                 <div className="artikel-title ml-2 w-50">

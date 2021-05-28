@@ -50,7 +50,7 @@ function TokoPage(props) {
                 <div className="d-flex flex-wrap">
                   <div className="thumb-img ">
                     <img
-                      src={`${tokoUser.foto_toko}`}
+                      src={tokoUser.foto_toko}
                       alt="profile"
                       width="100%"
                     />

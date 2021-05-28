@@ -25,7 +25,7 @@ function ForumCard(props) {
                     to={`/singleThread/${props.idThreads}`}>
                     {props.gambar ? (
                         <div>
-                            <img className="thumb-forum" src={`${props.gambar}`} alt="forum" />
+                            <img className="thumb-forum" src={props.gambar} alt="forum" />
                         </div>
                     ) : null}
                 </Link>

@@ -35,7 +35,7 @@ function Artikel() {
                 <Link className="link" to={`/detailArtikel/${single.id_artikel}`} >
                   <div className="thumb-detail-artikel w-100 p-3">
                     <div className="thumb-image">
-                      <img className="img-fluid" alt="petani" src={`${single.foto_artikel}`} />
+                      <img className="img-fluid" alt="petani" src={single.foto_artikel} />
                     </div>
                     <strong>{single.judul_artikel}</strong>
                   </div>
@@ -47,7 +47,7 @@ function Artikel() {
                 <Link className="link" to={`/detailArtikel/${list.id_artikel}`} >
                   <div key={list.id_artikel} className=" list-artikel px-3 mt-2 w-100 ">
                     <div className="thumb-image w-30">
-                      <img className="img-fluid" width="150px" alt="petani" src={`${list.foto_artikel}`} />
+                      <img className="img-fluid" width="150px" alt="petani" src={list.foto_artikel} />
                     </div>
                     <div className="artikel-title ml-2 w-50">
                       <strong>{list.judul_artikel}</strong>

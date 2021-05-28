@@ -73,7 +73,7 @@ function ProdukCostumer(props) {
                       <div
                         style={{
                           height: "250px",
-                          backgroundImage: `url(${`${productUser.foto}`})`,
+                          backgroundImage: `url(${productUser.foto})`,
                           backgroundSize: "cover",
                         }}
                         className="product-costumer-handler"

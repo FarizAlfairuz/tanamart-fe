@@ -222,7 +222,7 @@ function SingleThreadPage(props) {
                     <div>
                       <img
                         className="thumb-forum"
-                        src={`${single.foto_threads}`}
+                        src={single.foto_threads}
                         alt="forum"
                       />
                     </div>

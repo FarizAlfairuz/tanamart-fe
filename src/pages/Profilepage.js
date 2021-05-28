@@ -38,7 +38,7 @@ function Profilepage(props) {
             <div className="col-sm-6 col-lg-2">
               <div className="thumb-img ">
                 <img
-                  src={`${bioUser.profile_pict}`}
+                  src={bioUser.profile_pict}
                   alt="profile"
                   width="100%"
                 />
