@@ -34,7 +34,8 @@ function Checkoutpage() {
         setListOrder(response.data);
         console.log(response.data);
         const itemPrice = response.data.reduce((a, c) => a + c.total_price, 0);
-        setTotalPrice(itemPrice);
+        const totalPriceItem = itemPrice.toLocaleString()
+        setTotalPrice(totalPriceItem);
       })
       .catch((err) => {
         console.log(err);
@@ -141,7 +142,7 @@ function Checkoutpage() {
           <div className="col-lg-6 col-sm-12">
             <div className="row d-flex justify-content-center">
               <div className="col-lg-5 col-12">
-                Total Harga : <strong>Rp {totaPrice.toLocaleString()}</strong>
+                Total Harga : <strong>Rp {totaPrice}</strong>
               </div>
             </div>
             <br />
