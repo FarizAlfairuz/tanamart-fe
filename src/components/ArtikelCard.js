@@ -8,7 +8,7 @@ import { Link } from "react-router-dom"
 
 
 function ArtikelCard() {
-  const [artikel, setArtikel] = useState([{}, {}, {}]);
+  const [artikel, setArtikel] = useState([]);
   const [infinite, setInfinite] = useState(true)
   const settingsSlick = {
     infinite: infinite,

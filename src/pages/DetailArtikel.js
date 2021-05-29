@@ -77,11 +77,11 @@ function DetailArtikel(props) {
                     src={list.foto_artikel}
                   />
                 </div>
-                <div className="artikel-title ml-2 w-50">
+                {/* <div className="artikel-title ml-2 w-50">
                   <strong>{list.judul_artikel}</strong>
                   <br></br>
                   <strong style={{ color: "grey" }}>10 menit yang lalu</strong>
-                </div>
+                </div> */}
               </div>
             </Link>
           ))}

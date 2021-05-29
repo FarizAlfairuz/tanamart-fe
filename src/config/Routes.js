@@ -32,6 +32,7 @@ import Sidebar from "../components/admin/SidebarAdmin";
 import Dashboard from "../pages/admin/DashboardAdmin";
 import EditArtikel from "../pages/admin/EditArtikel";
 import EditThread from "../pages/EditThread";
+import AboutUs from '../pages/AboutUs';
 
 function Routes() {
   const [idUser, setIdUser] = useState(false);
@@ -153,6 +154,7 @@ function Routes() {
               path="/editThread/:id_thread"
               component={(props) => <EditThread idUser={idUser} {...props} />}
             ></Route>
+            <Route path="/about" component={AboutUs} ></Route>
           </Switch>
 
           {/* footer */}
