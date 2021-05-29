@@ -3,7 +3,7 @@
     margin-right: 15%;
 }
 
-.card {
+.card-about {
     color: white;
     font-size: 1em;
     overflow: hidden;
@@ -19,12 +19,12 @@
     transform: scale(1.1);
 } */
 
-.card img {
+.card-about img {
     height: 250px;
     object-fit: cover;
 }
 
-.card-block {
+.card-about-block {
     position: relative;
     margin: 0;
     padding: 1em;

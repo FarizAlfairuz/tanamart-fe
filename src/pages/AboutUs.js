@@ -15,13 +15,13 @@ function AboutUs() {
                 </div>
 
                 {/* fahrul */}
-                <div className="card">
+                <div className="card-about">
                     <div className="row">
                         <div className="col-sm-5">
                             <img className="d-block w-100" src={fahrul} alt="fahrul" />
                         </div>
                         <div className="col-sm-7 d-flex flex-column justify-content-between" style={{paddingTop: "2%", }}>
-                            <div className="card-block details">
+                            <div className="card-block-about details">
                                 <h5>Muhamad Fahrul Azimi</h5>
                                 <h6>Project Manager</h6>
                                 <p>Aku suka roti</p>
@@ -32,10 +32,10 @@ function AboutUs() {
                 </div>
 
                 {/* pop */}
-                <div class="card">
+                <div class="card-about">
                     <div class="row ">
                         <div class="col-sm-7 d-flex flex-column justify-content-between" style={{ paddingTop: "2%", paddingLeft: "4%"}}>
-                            <div className="card-block details" >
+                            <div className="card-block-about details" >
                                 <h5>Alfian Fadhil Labib</h5>
                                 <h6>Frontend Developer</h6>
                                 <p>Lagi makan roti</p>
@@ -49,13 +49,13 @@ function AboutUs() {
                 </div>
 
                 {/* fariz */}
-                <div className="card">
+                <div className="card-about">
                     <div className="row">
                         <div className="col-sm-5">
                             <img className="d-block w-100" src={fariz} alt="fariz" />
                         </div>
                         <div className="col-sm-7 d-flex flex-column justify-content-between" style={{paddingTop: "2%", }}>
-                            <div className="card-block details">
+                            <div className="card-block-about details">
                                 <h5>Falah Rizqi Abdullah Fairuz</h5>
                                 <h6>Frontend Developer</h6>
                                 <p>Dipanggil Fariz</p>
@@ -66,10 +66,10 @@ function AboutUs() {
                 </div>
 
                 {/* egy */}
-                <div class="card">
+                <div class="card-about">
                     <div class="row ">
                         <div class="col-sm-7 d-flex flex-column justify-content-between" style={{ paddingTop: "2%", paddingLeft: "4%"}}>
-                            <div className="card-block details" >
+                            <div className="card-block-about details" >
                                 <h5>Ahmad Egy Aranda</h5>
                                 <h6>Backend Developer</h6>
                                 <p>Love to learn new things. Especially about Back End Engineering</p>
@@ -83,13 +83,13 @@ function AboutUs() {
                 </div>
 
                 {/* daniel */}
-                <div className="card">
+                <div className="card-about">
                     <div className="row">
                         <div className="col-sm-5">
                             <img className="d-block w-100" src={daniel} alt="daniel" />
                         </div>
                         <div className="col-sm-7 d-flex flex-column justify-content-between" style={{paddingTop: "2%", }}>
-                            <div className="card-block details">
+                            <div className="card-block-about details">
                                 <h5>Daniel Rama Hiskia</h5>
                                 <h6>Backend Developer</h6>
                                 <p>Penyuka pisang</p>
