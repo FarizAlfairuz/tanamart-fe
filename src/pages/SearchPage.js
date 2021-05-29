@@ -73,7 +73,7 @@ function SearchPage(props) {
                             </span> */}
                           </p>
                           <p className="price">
-                            <strong>Rp {product.harga_barang}</strong>
+                            <strong>Rp {product.harga_barang.toLocaleString()}</strong>
                           </p>
                         </div>
                       </div>
