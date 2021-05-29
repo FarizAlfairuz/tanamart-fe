@@ -37,7 +37,7 @@ function SearchPage(props) {
                   >
                     <div className="col">
                       <div key={product.id_barang} className="card my-2">
-                        {product.foto.includes("foto_barang") ? (
+                        {product.foto ? (
                           <div
                             className="thumb-img-product d-flex justify-content-center align-items-center"
                             style={{
@@ -64,16 +64,16 @@ function SearchPage(props) {
                             {product.nama_barang}
                           </h5>
                           <p className="card-text">
-                            <span>
+                            {/* <span>
                               4.6<i class="fas fa-star"></i>
                               <i class="fas fa-star"></i>
                               <i class="fas fa-star"></i>
                               <i class="fas fa-star"></i>
                               <i class="fas fa-star"></i>
-                            </span>
+                            </span> */}
                           </p>
                           <p className="price">
-                            <strong>Rp {product.harga_barang}/kg</strong>
+                            <strong>Rp {product.harga_barang}</strong>
                           </p>
                         </div>
                       </div>
