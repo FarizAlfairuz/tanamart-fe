@@ -61,7 +61,7 @@ function DetailArtikel(props) {
               />
             </div>
             <div className="text-artikel">
-              <p className="text-justify mt-3">{single.isi_artikel}</p>
+              <pre className="text-justify mt-3">{single.isi_artikel}</pre>
             </div>
           </div>
         </div>

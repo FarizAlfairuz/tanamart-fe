@@ -63,10 +63,10 @@ function AddProduk(props) {
         setDisable(false);
         console.log(response);
         window.location.href = "/toko";
-        swal("upload berhasil");
+        swal("Upload berhasil");
       })
       .catch((err) => {
-        swal("upload gagal, jangan ada data yang kosong");
+        swal("Upload gagal, jangan ada data yang kosong");
         window.location.href = "/addProduk";
         console.log(err);
       });
@@ -117,7 +117,7 @@ function AddProduk(props) {
                     }
                     value={products.deskripsi}
                     type="text"
-                    className="form-control py-5"
+                    className="form-control"
                   />
                 </div>
                 <div className="form-group">

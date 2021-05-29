@@ -53,10 +53,10 @@ function Editprofile(props) {
       .then((response) => {
         window.location.href = "/profile";
         setDisable(false);
-        swal("upload berhasil");
+        swal("Upload berhasil");
       })
       .catch((err) => {
-        swal("upload gagal, jangan ada data yang kosong");
+        swal("Upload gagal, jangan ada data yang kosong");
         window.location.href = "/editprofile";
       });
   };
@@ -75,14 +75,18 @@ function Editprofile(props) {
               {image.preview ? (
                 <div className="thumb-img m-auto">
                   <img
-                    src="https://image000.flaticon.com/png/512/2948/2948035.png
-"
-                    alt="profile"
+                    src={image.preview}
+                    alt="dummy"
+                    width="300"
+                    height="300"
                   />
                 </div>
               ) : (
                 <div className="thumb-img m-auto">
-                  <img src="#" alt="dummy" width="300" height="300" />
+                  <img
+                    src="https://image000.flaticon.com/png/512/2948/2948035.png"
+                    alt="profile"
+                  />
                 </div>
               )}
               <div className="button-edit mx-auto mt-2">

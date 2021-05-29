@@ -112,7 +112,7 @@ function DetailProductPage(props) {
                     <div className="px-1">
                       <h4>{detailBarang.nama_barang}</h4>
                       <p>
-                        <strong>Rp {detailBarang.harga_barang}/kg</strong>
+                        <strong>Rp {detailBarang.harga_barang.toLocaleString()}/kg</strong>
                       </p>
                       <div>
                         <strong>Stok : {detailBarang.qty - count}</strong>

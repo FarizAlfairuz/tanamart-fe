@@ -82,11 +82,11 @@ function ProductCard(props) {
                     className="card mx-1"
                     style={{ width: "28rem" }}
                   >
-                    {product.foto.includes("foto_barang") ? (
+                    {product.foto ? (
                       <div
                         className="thumb-img-product d-flex justify-content-center align-items-center"
                         style={{
-                          backgroundImage: ` url("${product.foto}")`,
+                          backgroundImage: ` url(${product.foto})`,
                           height: "250px",
                           backgroundSize: "100% 100%",
                           backgroundRepeat: "no-repeat",

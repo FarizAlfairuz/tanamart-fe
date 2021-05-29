@@ -106,7 +106,7 @@ function EditProduk(props) {
                     }
                     value={products.deskripsi}
                     type="text"
-                    className="form-control py-5"
+                    className="form-control"
                   />
                 </div>
                 <div className="form-group">

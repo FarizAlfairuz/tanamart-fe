@@ -101,12 +101,12 @@ function ProdukCostumer(props) {
                       </h5>
                       <p className="card-text">
                         <span>
-                          <strong>QTY : </strong>
+                          <strong>Stok: </strong>
                         </span>
                         <span>{productUser.qty}</span>
                       </p>
                       <p className="price">
-                        <strong>Rp {productUser.harga_barang}</strong>
+                        <strong>Rp {productUser.harga_barang.toLocaleString()}</strong>
                       </p>
                     </div>
                   </div>

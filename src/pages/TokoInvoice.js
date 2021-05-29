@@ -82,7 +82,7 @@ function TokoInvoice(props) {
                   <td>{order.alamat}</td>
                   <td>{order.nama_barang}</td>
                   <td>{order.qty}</td>
-                  <td>{order.total_price}</td>
+                  <td>Rp {order.total_price.toLocaleString()}</td>
                   <td>
                     {order.status === 2 ? (
                       <button
