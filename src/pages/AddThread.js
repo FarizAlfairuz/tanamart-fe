@@ -87,7 +87,9 @@ function AddThread(props) {
                                 onChange={(e) =>
                                     dispatch({ type: "isi", upload: e.target.value })
                                 }
-                                className="form-control"></textarea>
+                                className="form-control"
+                                style={{whiteSpace: "pre-line"}}
+                                ></textarea>
                         </div>
                         <div className="form-group">
                             <label htmlFor="judul">Gambar</label>
