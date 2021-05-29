@@ -3,7 +3,7 @@ import "../assets/css/singleforum.css";
 import axios from "axios";
 import CommentCard from "../components/CommentCard";
 import swal from "sweetalert";
-import { Link, useHistory } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom";
 
 function SingleThreadPage(props) {
   const { idThreads } = props.match.params;
@@ -14,7 +14,6 @@ function SingleThreadPage(props) {
   const localIdUser = localStorage.getItem("id");
   const [idbio, setIdBio] = useState(false);
   let history = useHistory();
-  
 
   useEffect(() => {
     axios
@@ -26,7 +25,9 @@ function SingleThreadPage(props) {
         console.log(err);
       });
     axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/biodataByUser/${single.id_user}`)
+      .get(
+        `${process.env.REACT_APP_BACKEND_URL}/biodataByUser/${single.id_user}`
+      )
       .then((response) => {
         setUser(response.data.nama);
       })
@@ -34,7 +35,9 @@ function SingleThreadPage(props) {
         console.log(err);
       });
     axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/getCommentByThreads/${idThreads}`)
+      .get(
+        `${process.env.REACT_APP_BACKEND_URL}/getCommentByThreads/${idThreads}`
+      )
       .then((response) => {
         setAllComments(response.data);
       })
@@ -89,7 +92,6 @@ function SingleThreadPage(props) {
             });
             console.log(err);
           });
-
       }
     } else {
       swal({
@@ -98,7 +100,6 @@ function SingleThreadPage(props) {
         dangerMode: true,
       });
     }
-
   };
 
   const buttonAddThread = () => {
@@ -119,7 +120,7 @@ function SingleThreadPage(props) {
     }
   };
 
-  const id_user_int = parseInt(localIdUser)
+  const id_user_int = parseInt(localIdUser);
 
   const deleteHandler = (id_thread) => {
     swal({
@@ -131,12 +132,15 @@ function SingleThreadPage(props) {
     }).then((willDelete) => {
       if (willDelete) {
         axios
-          .delete(`${process.env.REACT_APP_BACKEND_URL}/deleteThreads/${id_thread}`, {
-            withCredentials: true,
-          })
+          .delete(
+            `${process.env.REACT_APP_BACKEND_URL}/deleteThreads/${id_thread}`,
+            {
+              withCredentials: true,
+            }
+          )
           .then((response) => {
             console.log(response);
-            history.push("/forum")
+            history.push("/forum");
           })
           .catch((error) => {
             console.log(error);
@@ -148,7 +152,7 @@ function SingleThreadPage(props) {
         swal("This thread is safe!");
       }
     });
-  }
+  };
 
   const deleteComment = (id_comment) => {
     swal({
@@ -160,16 +164,19 @@ function SingleThreadPage(props) {
     }).then((willDelete) => {
       if (willDelete) {
         axios
-          .delete(`${process.env.REACT_APP_BACKEND_URL}/deleteComment/${id_comment}`, {
-            withCredentials: true,
-          })
+          .delete(
+            `${process.env.REACT_APP_BACKEND_URL}/deleteComment/${id_comment}`,
+            {
+              withCredentials: true,
+            }
+          )
           .then((response) => {
             console.log(response);
             const komen = [...allComments];
             const index = komen.findIndex(
               (list) => list.id_comment === id_comment
             );
-            console.log(index)
+            console.log(index);
             komen.splice(index, 1);
             setAllComments(komen);
           })
@@ -183,14 +190,13 @@ function SingleThreadPage(props) {
         swal("This comment is safe!");
       }
     });
-  }
+  };
 
-  const date = single.timestamp
-  const dt = new Date(date)
-  const dateString = dt.toDateString()
-  const hour = dt.getHours()
-  const minute = dt.getMinutes()
-  
+  const date = single.timestamp;
+  const dt = new Date(date);
+  const dateString = dt.toDateString();
+  const hour = dt.getHours();
+  const minute = dt.getMinutes();
 
   return (
     <section id="forum" style={{ backgroundColor: "#F1F1F1" }}>
@@ -215,8 +221,21 @@ function SingleThreadPage(props) {
                   </div>
                   <div className="d-flex" style={{ color: "grey" }}>
                     <p>Penulis: {user} |</p>
-                    <p>&nbsp;{dateString}  |</p>
-                    <p className="d-flex">&nbsp;{hour < 10 ? (<div>{" 0" + hour}</div>) : (<div>{" " + hour}</div>)}:{minute < 10 ? (<div>{" 0" + minute}</div>) : (<div>{" " + minute}</div>)}</p>
+                    <p>&nbsp;{dateString} |</p>
+                    <p className="d-flex">
+                      &nbsp;
+                      {hour < 10 ? (
+                        <div>{" 0" + hour}</div>
+                      ) : (
+                        <div>{" " + hour}</div>
+                      )}
+                      :
+                      {minute < 10 ? (
+                        <div>{" 0" + minute}</div>
+                      ) : (
+                        <div>{" " + minute}</div>
+                      )}
+                    </p>
                   </div>
                   {single.foto_threads ? (
                     <div>
@@ -229,20 +248,26 @@ function SingleThreadPage(props) {
                   ) : null}
                   {single.isi_threads ? (
                     <div>
-                      <pre>{single.isi_threads}</pre>
+                      <p>{single.isi_threads}</p>
                     </div>
                   ) : null}
                 </div>
 
                 <div className="d-flex">
                   {id_user_int === single.id_user ? (
-                    <Link className="link d-flex align-items-center ml-3" to={`/editThread/${single.id_threads}`} >
+                    <Link
+                      className="link d-flex align-items-center ml-3"
+                      to={`/editThread/${single.id_threads}`}
+                    >
                       <h6>Edit</h6>
                     </Link>
                   ) : null}
 
                   {id_user_int === single.id_user ? (
-                    <div onClick={() => deleteHandler(single.id_threads)} className="m-2 hapus-thread ml-4" >
+                    <div
+                      onClick={() => deleteHandler(single.id_threads)}
+                      className="m-2 hapus-thread ml-4"
+                    >
                       <h6>Hapus</h6>
                     </div>
                   ) : null}

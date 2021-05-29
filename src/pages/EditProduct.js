@@ -2,6 +2,7 @@ import { useReducer, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
+import swal from "sweetalert";
 
 const initialState = {
   nama_barang: "",
@@ -49,7 +50,7 @@ function EditProduk(props) {
         withCredentials: true,
       })
       .then((response) => {
-        alert("Edit berhasil");
+        swal("Edit berhasil");
         setDisable(false);
         window.location.href = "/toko";
         console.log(response);
