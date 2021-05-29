@@ -36,8 +36,9 @@ function Checkoutpage() {
         setListOrder(response.data);
         console.log(response.data);
         const itemPrice = response.data.reduce((a, c) => a + c.total_price, 0);
-        const itemPrice = response.data.reduce((a, c) => a + c.total_price, 0);
-        setTotalPrice(itemPrice);
+        const price = itemPrice * 10000;
+        const totalPriceItem = price.toLocaleString();
+        setTotalPrice(totalPriceItem);
       })
       .catch((err) => {
         console.log(err);
@@ -157,7 +158,7 @@ function Checkoutpage() {
                   stripeKey="pk_test_51IhwCdAOjVh90cSMv79k3OU3vc2a3nhyzQIsJdVckef6KOB3oohiw9cJ1BuuXjCfbpM3oFUFH2CLyNYMkZjpEH2500VdvfZlGp"
                   token={makePayment}
                   name="Checkout"
-                  amount={totaPrice * 100}
+                  amount={totaPrice}
                   currency="idr"
                 >
                   <button
