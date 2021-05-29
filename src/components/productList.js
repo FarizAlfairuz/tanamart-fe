@@ -44,7 +44,7 @@ function ProductCard() {
                   >
                     <div className="col">
                       <div key={product.id_barang} className="card my-2">
-                        {product.foto.includes("foto_barang") ? (
+                        {product.foto ? (
                           <div
                             className="thumb-img-product d-flex justify-content-center align-items-center"
                             style={{
@@ -70,7 +70,7 @@ function ProductCard() {
                           <h5 className="card-title font-weight-bold">
                             {product.nama_barang}
                           </h5>
-                          <p className="card-text">
+                          {/* <p className="card-text">
                             <span>
                               4.6<i class="fas fa-star"></i>
                               <i class="fas fa-star"></i>
@@ -78,10 +78,18 @@ function ProductCard() {
                               <i class="fas fa-star"></i>
                               <i class="fas fa-star"></i>
                             </span>
+                          </p> */}
+
+                          <p style={{ fontSize: "12px", color: "grey" }}>
+                            {product.toko.nama_toko}
+                          </p>
+                          <p className="card-text" style={{ fontSize: "14px" }} >
+                            Stok: {product.qty.toLocaleString()}
                           </p>
                           <p className="price">
-                            <strong>Rp {product.harga_barang}/kg</strong>
+                            <strong>Rp {product.harga_barang.toLocaleString()}/kg</strong>
                           </p>
+
                         </div>
                       </div>
                     </div>
