@@ -16,7 +16,9 @@ function Checkoutpage() {
     };
 
     axios
-      .post(`${process.env.REACT_APP_BACKEND_URL}/checkout`, body, { withCredentials: true })
+      .post(`${process.env.REACT_APP_BACKEND_URL}/checkout`, body, {
+        withCredentials: true,
+      })
       .then((response) => {
         console.log(response);
         console.log(token);
@@ -34,7 +36,7 @@ function Checkoutpage() {
         setListOrder(response.data);
         console.log(response.data);
         const itemPrice = response.data.reduce((a, c) => a + c.total_price, 0);
-        const totalPriceItem = itemPrice.toLocaleString()
+        const totalPriceItem = itemPrice.toLocaleString();
         setTotalPrice(totalPriceItem);
       })
       .catch((err) => {
@@ -98,7 +100,9 @@ function Checkoutpage() {
                     />
                     <h6>{list.product.nama_barang}</h6>
                   </div>
-                  <div className="col-2">Rp {list.product.harga_barang.toLocaleString()}</div>
+                  <div className="col-2">
+                    Rp {list.product.harga_barang.toLocaleString()}
+                  </div>
                   <div className="col-3">
                     <div className="d-flex justify-content-center">
                       <strong>{list.qty}</strong>
@@ -154,6 +158,7 @@ function Checkoutpage() {
                   token={makePayment}
                   name="Checkout"
                   amount={totaPrice}
+                  currency="idr"
                 >
                   <button
                     className="btn btn-warning"
