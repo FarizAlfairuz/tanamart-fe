@@ -5,6 +5,7 @@ import { Icon } from "@iconify/react";
 import instagramFilled from "@iconify/icons-ant-design/instagram-filled";
 import facebookFilled from "@iconify/icons-ant-design/facebook-filled";
 import twitterFilled from "@iconify/icons-ant-design/twitter-circle-filled";
+import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
@@ -33,7 +34,9 @@ function Footer() {
                     <li>
                       <p>Karier</p>
                     </li>
-                    <li>Tentang</li>
+                    <li>
+                      <Link className="footer-link" to="/about">Tentang Kami</Link>
+                    </li>
                     <li>Blog</li>
                     <li>FAQ</li>
                   </ul>

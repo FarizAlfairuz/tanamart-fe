@@ -61,12 +61,12 @@ function DetailArtikel(props) {
               />
             </div>
             <div className="text-artikel">
-              <pre className="text-justify mt-3">{single.isi_artikel}</pre>
+              <p className="text-justify mt-3">{single.isi_artikel}</p>
             </div>
           </div>
         </div>
         <div className=" col-12 col-lg-4 p-0">
-          {artikel.map((list) => (
+          {/* {artikel.map((list) => (
             <Link className="link" to={`/detailArtikel/${list.id_artikel}`} >
               <div className=" list-artikel px-3 mt-2 w-100 ">
                 <div className="thumb-image w-30">
@@ -84,7 +84,7 @@ function DetailArtikel(props) {
                 </div>
               </div>
             </Link>
-          ))}
+          ))} */}
         </div>
       </div>
     </div>

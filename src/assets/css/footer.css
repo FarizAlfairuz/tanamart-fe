@@ -5,6 +5,20 @@
     margin-bottom: 5px;
 }
 
+.footer-link {
+    list-style: none;
+    color: #D6EFC7;
+    font-size: 14px;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
 .nav-footer .col-lg-12 {
     display: flex;
     justify-content: space-between;
