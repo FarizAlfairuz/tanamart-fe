@@ -112,7 +112,7 @@ function DetailProductPage(props) {
                     <div className="px-1">
                       <h4>{detailBarang.nama_barang}</h4>
                       <p>
-                        <strong>Rp {detailBarang.harga_barang.toLocaleString()}/kg</strong>
+                        <strong>Rp {detailBarang.harga_barang.toLocaleString()}</strong>
                       </p>
                       <div>
                         <strong>Stok : {detailBarang.qty - count}</strong>
@@ -176,7 +176,7 @@ function DetailProductPage(props) {
                       />
                     </div>
                     <div>{toko.nama_toko}</div>
-                    <div>online</div>
+                    <div>Online</div>
                     <a
                       href={`https://api.whatsapp.com/send/?phone=${toko.kontak_toko}?&app_absent=0`}
                     >
