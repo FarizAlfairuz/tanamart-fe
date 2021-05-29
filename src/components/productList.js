@@ -43,7 +43,11 @@ function ProductCard() {
                     to={`/detailproduk/${product.id_barang}`}
                   >
                     <div className="col">
-                      <div key={product.id_barang} className="card my-2">
+                      <div
+                        key={product.id_barang}
+                        className="card my-2"
+                        style={{ height: "400px" }}
+                      >
                         {product.foto ? (
                           <div
                             className="thumb-img-product d-flex justify-content-center align-items-center"
@@ -83,13 +87,14 @@ function ProductCard() {
                           <p style={{ fontSize: "12px", color: "grey" }}>
                             {product.toko.nama_toko}
                           </p>
-                          <p className="card-text" style={{ fontSize: "14px" }} >
+                          <p className="card-text" style={{ fontSize: "14px" }}>
                             Stok: {product.qty.toLocaleString()}
                           </p>
                           <p className="price">
-                            <strong>Rp {product.harga_barang.toLocaleString()}/kg</strong>
+                            <strong>
+                              Rp {product.harga_barang.toLocaleString()}/kg
+                            </strong>
                           </p>
-
                         </div>
                       </div>
                     </div>

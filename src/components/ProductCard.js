@@ -7,10 +7,9 @@ import Sliderslick from "react-slick";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-
 function ProductCard(props) {
   const [products, setProducts] = useState([]);
-  const [infinite, setInfinite] = useState(true)
+  const [infinite, setInfinite] = useState(true);
   const settingsSlick = {
     infinite: infinite,
     speed: 500,
@@ -45,7 +44,6 @@ function ProductCard(props) {
       },
     ],
   };
-  
 
   useEffect(() => {
     axios
@@ -57,18 +55,17 @@ function ProductCard(props) {
       .catch((err) => {
         console.log(err);
       });
-
   }, []);
 
   useEffect(() => {
-    if(products.length < 4) {
-      setInfinite(false)
+    if (products.length < 4) {
+      setInfinite(false);
     } else {
-      setInfinite(true)
+      setInfinite(true);
     }
-  }, [products.length])
-  console.log(products)
-  console.log(infinite)
+  }, [products.length]);
+  console.log(products);
+  console.log(infinite);
   return (
     <div>
       <section id="marketplace-product">
@@ -80,7 +77,7 @@ function ProductCard(props) {
                   <div
                     key={product.id_barang}
                     className="card mx-1"
-                    style={{ width: "28rem" }}
+                    style={{ width: "28rem", height: "400px" }}
                   >
                     {product.foto ? (
                       <div
@@ -114,14 +111,16 @@ function ProductCard(props) {
                       <h5 className="card-title font-weight-bold">
                         {product.nama_barang}
                       </h5>
-                      <p style={{fontSize: "12px", color: "grey" }}>
+                      <p style={{ fontSize: "12px", color: "grey" }}>
                         {product.toko.nama_toko}
                       </p>
-                      <p className="card-text" style={{fontSize: "14px" }} >
+                      <p className="card-text" style={{ fontSize: "14px" }}>
                         Stok: {product.qty.toLocaleString()}
                       </p>
                       <p className="price">
-                        <strong>Rp {product.harga_barang.toLocaleString()}/kg</strong>
+                        <strong>
+                          Rp {product.harga_barang.toLocaleString()}/kg
+                        </strong>
                       </p>
                     </div>
                   </div>
