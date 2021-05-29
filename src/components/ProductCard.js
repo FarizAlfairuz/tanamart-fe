@@ -119,7 +119,7 @@ function ProductCard(props) {
                       </p>
                       <p className="price">
                         <strong>
-                          Rp {product.harga_barang.toLocaleString()}/kg
+                          Rp {product.harga_barang.toLocaleString()}
                         </strong>
                       </p>
                     </div>
