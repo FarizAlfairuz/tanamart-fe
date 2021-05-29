@@ -157,7 +157,7 @@ function Checkoutpage() {
                   stripeKey="pk_test_51IhwCdAOjVh90cSMv79k3OU3vc2a3nhyzQIsJdVckef6KOB3oohiw9cJ1BuuXjCfbpM3oFUFH2CLyNYMkZjpEH2500VdvfZlGp"
                   token={makePayment}
                   name="Checkout"
-                  amount={totaPrice}
+                  amount={totaPrice * 10000}
                   currency="idr"
                 >
                   <button
