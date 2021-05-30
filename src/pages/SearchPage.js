@@ -31,55 +31,52 @@ function SearchPage(props) {
           <div className="row row-cols-1 row-cols-md-4 g-4">
             {products.length !== 0
               ? products.map((product) => (
-                  <Link
-                    className="link"
-                    to={`/detailproduk/${product.id_barang}`}
-                  >
-                    <div className="col">
-                      <div key={product.id_barang} className="card my-2">
-                        {product.foto ? (
-                          <div
-                            className="thumb-img-product d-flex justify-content-center align-items-center"
-                            style={{
-                              backgroundImage: ` url(${product.foto})`,
-                              height: "250px",
-                              backgroundSize: "100% 100%",
-                              backgroundRepeat: "no-repeat",
-                            }}
-                          >
-                            <div className="button-beli">
-                              <button className="btn ">Beli Produk</button>
-                            </div>
+                <Link
+                  className="link"
+                  to={`/detailproduk/${product.id_barang}`}
+                >
+                  <div className="col">
+                    <div key={product.id_barang} className="card my-2">
+                      {product.foto ? (
+                        <div
+                          className="thumb-img-product d-flex justify-content-center align-items-center"
+                          style={{
+                            backgroundImage: ` url(${product.foto})`,
+                            height: "250px",
+                            backgroundSize: "100% 100%",
+                            backgroundRepeat: "no-repeat",
+                          }}
+                        >
+                          <div className="button-beli">
+                            <button className="btn ">Beli Produk</button>
                           </div>
-                        ) : (
-                          <img
-                            height="250px"
-                            className="card-img-top"
-                            src={""}
-                            alt="Card"
-                          />
-                        )}
-                        <div className="card-body ">
-                          <h5 className="card-title font-weight-bold">
-                            {product.nama_barang}
-                          </h5>
-                          <p className="card-text">
-                            {/* <span>
-                              4.6<i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                            </span> */}
-                          </p>
-                          <p className="price">
-                            <strong>Rp {product.harga_barang.toLocaleString()}</strong>
-                          </p>
                         </div>
+                      ) : (
+                        <img
+                          height="250px"
+                          className="card-img-top"
+                          src={""}
+                          alt="Card"
+                        />
+                      )}
+                      <div className="card-body ">
+                        <h5 className="card-title font-weight-bold">
+                          {product.nama_barang}
+                        </h5>
+                        <p style={{ fontSize: "12px", color: "grey" }}>
+                          {product.toko.nama_toko}
+                        </p>
+                        <p className="card-text" style={{ fontSize: "14px" }}>
+                          Stok: {product.qty.toLocaleString()}
+                        </p>
+                        <p className="price">
+                          <strong>Rp {product.harga_barang.toLocaleString()}</strong>
+                        </p>
                       </div>
                     </div>
-                  </Link>
-                ))
+                  </div>
+                </Link>
+              ))
               : (
                 <div className="ml-5">
                   <h6>Barang tidak ditemukan</h6>
